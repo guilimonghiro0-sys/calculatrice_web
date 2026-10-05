@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titre %}Historique - CalculatedX{% endblock %}
+
+{% block contenu %}
+    <h1>Historique des calculs</h1>
+
+    {% if historique %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre 1</th>
+                    <th>Opérateur</th>
+                    <th>Nombre 2</th>
+                    <th>Résultat</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nombre1, operateur, nombre2, resultat in historique %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ nombre1 }}</td>
+                    <td>{{ operateur }}</td>
+                    <td>{{ nombre2 }}</td>
+                    <td>{{ resultat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun calcul dans l'historique.</p>
+    {% endif %}
+{% endblock %}
