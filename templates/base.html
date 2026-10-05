@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titre %}CalculatedX{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('accueil') }}">Accueil</a>
+        <a href="{{ url_for('calcul') }}">Calculer</a>
+        <a href="{{ url_for('historique') }}">Historique</a>
+    </nav>
+
+    <main>
+        {% block contenu %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>CalculatedX Web &copy; 2026</p>
+    </footer>
+</body>
+</html>
